@@ -151,7 +151,7 @@ def main():
     parser.add_argument('-s','--server', type=str, default='/tmp/mt5linux', help='Path where the server will be build and run (defaul = /tmp/mt5linux)')
     args = parser.parse_args()
     #
-    wine_cmd=args.wine
+    #wine_cmd=args.wine
     win_python_path=args.python
     server_dir=args.server
     server_code='server.py'
@@ -161,7 +161,7 @@ def main():
     Popen(['mkdir','-p',server_dir],shell=True).wait()
     __generate_server_classic(os.path.join(server_dir,server_code).replace("\\", "/"))
     Popen([
-            wine_cmd,
+            #wine_cmd,
             os.path.join(win_python_path),
             os.path.join(server_dir,server_code).replace("\\", "/"),
             '--host',
