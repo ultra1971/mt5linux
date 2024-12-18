@@ -163,7 +163,7 @@ def main():
     Popen([
             wine_cmd,
             os.path.join(win_python_path),
-            os.path.join(server_dir,server_code),
+            os.path.join(server_dir,server_code).replace("\\", "/"),
             '--host',
             host,
             '-p',
