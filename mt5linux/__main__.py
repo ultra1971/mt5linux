@@ -159,7 +159,7 @@ def main():
     host=args.host
     #
     Popen(['mkdir','-p',server_dir],shell=True).wait()
-    __generate_server_classic(os.path.join(server_dir,server_code))
+    __generate_server_classic(os.path.join(server_dir,server_code).replace("\\", "/"))
     Popen([
             wine_cmd,
             os.path.join(win_python_path),
