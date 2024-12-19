@@ -1,6 +1,16 @@
-# MetaTrader 5 for linux system
+# MetaTrader 5 for Linux
 
-A simple package that uses [wine](https://www.winehq.org), [rpyc](https://github.com/tomerfiliba-org/rpyc) and a Python Windows version to allow using [MetaTrader5](https://pypi.org/project/MetaTrader5) on Linux.
+**Forked from [lucas-campagna/mt5linux](https://github.com/lucas-campagna/mt5linux). This is a more up-to-date version which incorporates recent MetaTrader5 software updates. It works with Python 3.13**
+
+## Requirements
+
+1. [Wine](https://www.winehq.org)
+
+2. [Python Windows](https://www.python.org)
+
+3. [MetaTrader software](https://www.metatrader5.com/). 
+
+Note: Above 3 steps are covered by the [MetaTrader Linux user guide](https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux)
 
 ## Install
 
@@ -10,13 +20,10 @@ A simple package that uses [wine](https://www.winehq.org), [rpyc](https://github
 
 3. Find the path to `python.exe`.
 
-    - Mine is installed on `/home/user/.wine/drive_c/users/user/Local Settings/Application Data/Programs/Python/Python39`.
-
 4. Install [mt5](https://www.mql5.com/en/docs/integration/python_metatrader5) library on your **Windows** Python version.
 
 ```
 pip install MetaTrader5
-pip install --upgrade MetaTrader5
 ```
 
 5. Install this package on both **Windows** and **Linux** Python versions:
@@ -29,29 +36,35 @@ pip install mt5linux
 
 Follow the steps:
 
-1. Open MetaTrader5.
+On **Windows** side:
 
-2. On **Windows** side, start the server on a terminal:
+1. Open the MetaTrader5 client.
+
+2. Start the server on a terminal:
 
 ```
 python -m mt5linux <path/to/python.exe>
 ```
 
-3. On **Linux** side, make your scripts/notebooks as you did with MetaTrader5:
+On **Linux** side:
+
+3. Make your scripts/notebooks as you did with MetaTrader5:
 
 ```python
 # import the package
 from mt5linux import MetaTrader5
-# connecto to the server
+
+# connect to the server
 mt5 = MetaTrader5(
-    # host = 'localhost' (default)
+    # host = "localhost" (default)
     # port = 18812       (default)
-) 
-# use as you learned from: https://www.mql5.com/en/docs/integration/python_metatrader5/
+)
+
+# use as you learned from https://www.mql5.com/en/docs/integration/python_metatrader5/
 mt5.initialize()
 mt5.terminal_info()
-mt5.copy_rates_from_pos('GOOG',mt5.TIMEFRAME_M1,0,1000)
-# ...
+mt5.copy_rates_from_pos("GOOG", mt5.TIMEFRAME_M1, 0, 1000)
+
 # don't forget to shutdown
 mt5.shutdown()
 ```
