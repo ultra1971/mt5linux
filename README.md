@@ -1,16 +1,16 @@
 # MetaTrader 5 for Linux
 
-**Forked from [lucas-campagna/mt5linux](https://github.com/lucas-campagna/mt5linux). This is a more up-to-date version which incorporates recent MetaTrader5 software updates. It works with Python 3.13**
+**Forked from [lucas-campagna/mt5linux](https://github.com/lucas-campagna/mt5linux). This is a more up-to-date version which incorporates recent MetaTrader5 software updates. It works with Python 3.13.**
 
 ## Requirements
 
-1. [Wine](https://www.winehq.org)
+1. [Wine](https://www.winehq.org).
 
-2. [Python Windows](https://www.python.org)
+2. [Python Windows](https://www.python.org).
 
 3. [MetaTrader software](https://www.metatrader5.com/). 
 
-Note: Above 3 steps are covered by the [MetaTrader Linux user guide](https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux)
+Note: Above 3 steps are covered by the [MetaTrader Linux user guide](https://www.metatrader5.com/en/terminal/help/start_advanced/install_linux).
 
 ## Install
 
