@@ -62,8 +62,8 @@ def main():
     Popen(
         [
         wine_cmd,
-        str(win_python_path),
-        str(server_path / server_code),
+        os.path.join(win_python_path),
+        os.path.join(server_path / server_code),
         "--host",
         host,
         "-p",
