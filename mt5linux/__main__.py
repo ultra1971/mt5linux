@@ -69,7 +69,7 @@ def main():
         host,
         "-p",
         str(port)
-        ], shell=True
+        ], shell=False
     ).wait()
 
 if __name__ == "__main__":
