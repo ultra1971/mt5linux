@@ -32,10 +32,17 @@ def main():
         default="tmp/mt5linux",
         help="Path where the server will be build and run (default = /tmp/mt5linux)"
     )
+    parser.add_argument(
+        '-w',
+        '--wine', 
+        type=str, 
+        default='wine',
+        help='Command line to call wine program (default = wine)')
 
     args = parser.parse_args()
 
     # parameters
+    wine_cmd=args.wine
     win_python_path = args.python
     server_dir = args.server
     port = args.port
@@ -54,6 +61,7 @@ def main():
     # execute
     Popen(
         [
+        wine_cmd,
         str(win_python_path),
         str(server_path / server_code),
         "--host",
